@@ -1,2 +1,2 @@
-# DeepLearn
-Files for Deep Learning
+# CNN
+Files for CNN Learning
