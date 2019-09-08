@@ -127,10 +127,10 @@ conv_shape = {
   'inception_5b_1x1_conv': [256, 736, 1, 1],
 }
 
-def load_weights_from_FaceNet(FRmodel, dir):
+def load_weights_from_FaceNet(FRmodel, direc):
     # Load weights from csv files (which was exported from Openface torch model)
     weights = WEIGHTS
-    weights_dict = load_weights(dir)
+    weights_dict = load_weights(direc)
 
     # Set layer weights of the model
     for name in weights:
@@ -139,9 +139,9 @@ def load_weights_from_FaceNet(FRmodel, dir):
         elif model.get_layer(name) != None:
             model.get_layer(name).set_weights(weights_dict[name])
 
-def load_weights(dir):
+def load_weights(direc):
     # Set weights path
-    dirPath = dir
+    dirPath = direc
     fileNames = filter(lambda f: not f.startswith('.'), os.listdir(dirPath))
     paths = {}
     weights_dict = {}
